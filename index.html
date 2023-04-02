@@ -1,104 +1,338 @@
 <!DOCTYPE html>
-<html>
+<html  lang="en">
    <head>
-      <title>Your movie shelf</title>
-      <meta name="autor" content="Popa Bianca Daniela">
-      <meta charset="utf-8">
-      <link rel="stylesheet" href="style.css" type="text/css">
-      <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your movie shelf</title>
+    <meta name="autor" content="Popa Bianca Daniela">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
    </head>
    <body>
       <header>
-        <nav id="meniu">
-            <a href="index.html" ><img src="img/logo.png" id="logo"></a>
-            <ul>
-                <li><a href="index.html" class="button">Home</a></li>
-                <li><a href="" class="button">My movies</a></li>
-                <li><a href="" class="button">Browse</a></li>
-                <li><a href="" class="button">TV Shows</a></li>
-                <li class="button"><a href="">Contact</a></li>
-            </ul>
+        <nav class="meniu">
+            <a href="index.html" ><img src="img/logo.png" alt ="logo" class="logo"></a>
+            <div class="meniuLinks">
+                <div class = "button close">Close</div>
+
+                <ul>
+                    <li><a href="index.html" class="button">Home</a></li>
+                    <li><a href="" class="button">My movies</a></li>
+                    <li>
+                        <a href="" class="button">Browse</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="#" class="button">Recomandations</a></li>
+                                <li>
+                                    <a href="#" class="button">Genres</a>
+                                <div class="sub-dropdown">
+                                        <ul>
+                                            <li><a href="#" class="button">Action movies</a></li>
+                                            <li><a href="#" class="button">Thriller movies</a></li>
+                                            <li><a href="#" class="button">Romantic movies</a></li>
+                                            <li><a href="#" class="button">Comedies</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                                <li><a href="#" class="button">Top rated</a></li>
+                            </ul>                 
+                        </div>
+                    </li>
+                    <li><a href="" class="button">Contact</a></li>
+                </ul>
+            </div>
+            <div class="button meniuIcon">Menu</div>
+
         </nav>
         <section class="titlu">
-            <h1 id = "principal">Your movie shelf<span id="blinking-cursor"></span></h1>
-            <h2 id="subTitlu">All your favorite movies in one place</h2>
+            <h1 class= "principal">Your movie shelf<span class="blinking-cursor"></span></h1>
+            <p class="subTitlu">All your favorite movies </br> in one place</p>
         </section>
       </header>
       <main>
 
-        <h2 id="titluSectiune">Popular now</h2>
-        <section id="sectiuneFilme">
+        <h2 class="titluSectiune">Popular now</h2>
+        <section class="sectiuneFilme">
+            <h1>Popular now</h1>
             <div class="image-container">
                 <img src="img/TheGodfather.jpg" alt="The Godfather">
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Godfather</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Shawshank Redemption</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/TheDarkKnight.jpg" alt="The Dark Knight">
-
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Dark Knight</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/12AngryMen.jpg" alt="12 Angry Men">
-
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>12 Angry Men</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/SchindlersList.jpeg" alt="Schindler's List">
-
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/SchindlersList.jpeg" alt="Schindler's List">
-
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
             <div class="image-container">
                 <img src="img/SchindlersList.jpeg" alt="Schindler's List">
-
-                <div id="overlay"></div>
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
             </div>
-
         </section>
 
-      <!--  <h2 id="titluSectiune">You may like</h2>
-        <section id="sectiuneFilme">
-            <img src="TheGodfather.jpg" alt="The Godfather">
-            <img src="TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
-            <img src="TheDarkKnight.jpg" alt="The Dark Knight">
-            <img src="12AngryMen.jpg" alt="12 Angry Men">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
+        <h2 class="titluSectiune">Top rated</h2>
+        <section class="sectiuneFilme">
+            <h1>Popular now</h1>
+            <div class="image-container">
+                <img src="img/TheGodfather.jpg" alt="The Godfather">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Godfather</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Shawshank Redemption</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheDarkKnight.jpg" alt="The Dark Knight">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Dark Knight</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/12AngryMen.jpg" alt="12 Angry Men">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>12 Angry Men</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
         </section>
-
-        <h2 id="titluSectiune">Your friends like</h2>
-        <section id="sectiuneFilme">
-            <img src="TheGodfather.jpg" alt="The Godfather">
-            <img src="TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
-            <img src="TheDarkKnight.jpg" alt="The Dark Knight">
-            <img src="12AngryMen.jpg" alt="12 Angry Men">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
+        <h2 class="titluSectiune">Your friends like</h2>
+        <section class="sectiuneFilme">
+            <h1>Popular now</h1>
+            <div class="image-container">
+                <img src="img/TheGodfather.jpg" alt="The Godfather">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Godfather</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Shawshank Redemption</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheDarkKnight.jpg" alt="The Dark Knight">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Dark Knight</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/12AngryMen.jpg" alt="12 Angry Men">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>12 Angry Men</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
         </section>
         
-        <h2 id="titluSectiune">Top Rated</h2>
-        <section id="sectiuneFilme">
-            <img src="TheGodfather.jpg" alt="The Godfather">
-            <img src="TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
-            <img src="TheDarkKnight.jpg" alt="The Dark Knight">
-            <img src="12AngryMen.jpg" alt="12 Angry Men">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-            <img src="SchindlersList.jpeg" alt="Schindler's List">
-        </section>-->
+        <h2 class="titluSectiune">Top Rated</h2>
+        <section class="sectiuneFilme">
+            <h1>Popular now</h1>
+            <div class="image-container">
+                <img src="img/TheGodfather.jpg" alt="The Godfather">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Godfather</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheShawshankRedemption.jpg" alt="The Shawshank Redemption">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Shawshank Redemption</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/TheDarkKnight.jpg" alt="The Dark Knight">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>The Dark Knight</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/12AngryMen.jpg" alt="12 Angry Men">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>12 Angry Men</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="img/SchindlersList.jpeg" alt="Schindler's List">
+                <div class="overlay"></div>
+                <div class="textFilm"> 
+                    <p>Schindler's List</p>
+                    <p>Rating</p> 
+                    <p>Add to favorites</p>
+                </div>
+            </div>
+        </section>
 
       </main>
       <footer>
+        <a href="">Contact</a>
+        <a href="">About us</a>
+        <a href="">Instagam</a>
+        <a href="">Facebook</a>
+        <a href="">Tik Tok</a>
+        <a href=""> </a>
+
       </footer>
    </body>
 </html>
