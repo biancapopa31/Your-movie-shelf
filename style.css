@@ -342,6 +342,11 @@ footer a{
     padding: 2%;
     text-decoration: none;
     color: var(--beige);
+    transition: all 0.3s;
+}
+
+footer a:hover{
+    color: var(--red);
 }
   
 
