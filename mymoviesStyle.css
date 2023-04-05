@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: var(--dark-blue);
+    background-color: var(--beige);
     display: grid;
     min-height: 100vh;
     margin: 0;
@@ -23,24 +23,25 @@ body{
     cursor:default;
 }
 main{
+    overflow: hidden;
     position: relative;
     height: fit-content;
+    padding-left: 15%;
+    padding-right: 15%;
+
 }
 
 header{
     position: relative;
     display: grid;  
-    grid-template-rows: 1fr 4fr;
-    grid-template-areas:
-        "a"
-        "b";
-    background-color: var(--beige);
     color: var(--red);
+    max-height: 15%;
+    height: fit-content;
     z-index: 1;
     box-shadow: 0px 2px 5px #777;
 
 }
-
+/*
 .titlu{
     display: grid;
 }
@@ -58,7 +59,7 @@ header{
     height: 1em;
     background-color:var(--red) ;
     animation: blink 1s step-end infinite;
-    caret-color: transparent; /* Hide the default caret */
+    caret-color: transparent;
   }
   
 @keyframes blink {
@@ -80,7 +81,7 @@ header{
     font-size: 1.5em;
     text-align: center;
 }   
-
+*/
 .meniu{
     padding-left: 3%;
     padding-right: 3%;
@@ -122,7 +123,6 @@ header{
     color: var(--red);
 }
 
-
 .dropdown{
     display: none;
     transition: display 0.3s ease;
@@ -139,6 +139,7 @@ header{
     width: max-content;
     margin-top: 1em;
 }
+
 .dropdown ul li:last-child{
     margin-bottom: 1em;
 }
@@ -269,110 +270,83 @@ header{
     
 }
 
-.titluSectiune{
-    padding-bottom: .5%;
-    margin-bottom: 1.5%;
-    padding-left: 1em;
-    color: var(--red);
-
-}
-
-main .titluSectiune:first-child{
-    padding-top: 2%;
-} 
-
-.scroll-holder{
-    overflow-x: hidden;
-}
-.sectiuneFilme {
-    white-space: nowrap;
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    align-items: stretch;
-    gap: 1em;
-    justify-content: space-around;
-    cursor:pointer;
-
-}
-
-.sectiuneFilme h1{
-    display: none;
-}
-
-.sectiuneFilme .image-container img{
-    position: relative;
-    width: 100%;
-    transition: width 0.3s ease;
-    height: auto;
-  
-}
-
-.image-container {
-    position: relative;
-}
-
-.sectiuneFilme .overlay, .textFilm {
+.strip{
     position: absolute;
-    top: 0;
-    left: 0px;
-    width: 100% ;
-    height: 100%;
-    opacity: 0;
-    transition: opacity .3s ease;
-    background-color: #001219B0  /* Change this to the color you want */
+    top: 100%;
+    width: 50em;
+    height: 1.5em;
+    background-color:var(--dark-blue);
+    transform: rotate(45deg);
+    z-index: -1;
 }
-.sectiuneFilme .textFilm{
+
+.strip.long{
+    transform: rotate(135deg);
+}
+.film .long:nth-child(2){
+    transform: rotate(135deg);
+    transform: translateX(100px);
+    background-color: var(--red)
+
+
+    
+}
+
+.tableContainer{
+    padding-top: 5%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: var(--beige);
+    flex-direction: row;
+}
+.leftSide{
+    position: sticky;
+    padding-right: 5%;
+    width: fit-content;
 }
 
-.sectiuneFilme .textFilm a{
-    text-decoration: none;
-    color: var(--beige);
+.leftSide section{
+    border-bottom: 1px solid var(--red);
+    padding-top: 5%;
+    width: fit-content;
 
 }
 
-.sectiuneFilme .textFilm p:first-child{
+.leftSide section h1{
+    font-size: 1em;
+    width: max-content;
+
+}
+
+.leftSide section ul li{
+    list-style-type: none;
+
+}
+
+table{
+    width: 100%;
+    border-spacing: 0;
+}
+
+table th{
+    text-align: left;
+    color: var(--red);
     font-weight: 900;
-    font-size: 1.2em;
+}
+table td, table th{
+    border-bottom: 1px solid var(--red);
+    padding: 1%;
+}
+table tr img{
+    height: 7em;
 }
 
-.sectiuneFilme .image-container:hover{  
-    position: relative;
-    top: -5%;
-    left: -5%;   
-    width: 110%;
-    z-index: 1;
-}
-
-.sectiuneFilme .image-container:hover .overlay {
-    opacity: 1;
-    left: -1px;
-    top: -1px;
-    height: calc(100% - 3px);
-}
-
-.sectiuneFilme .image-container:hover .textFilm{
-    opacity: 1;
-}
-
-.sectiuneFilme .textFilm p:hover{
-    text-decoration: underline;
-    cursor: pointer;
-}
-.sectiuneFilme .textFilm p:first-child:hover{
-    text-decoration: none;
-}
 
 footer{
+    position:-ms-page;
+
+
     margin-top: 2%;
-    border-top: 1px solid var(--beige);
-    border-bottom: 1px solid var(--beige);
+    border-top: 2px solid var(--red);
+    border-bottom: 1px solid var(--red);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -383,6 +357,7 @@ footer{
 footer a{
     padding: 2%;
     text-decoration: none;
+    font-weight: bold;
     color: var(--beige);
     transition: all 0.3s;
 }
@@ -392,33 +367,6 @@ footer a:hover{
   
 
 @media(max-width: 700px){
-    .titluSectiune{
-        font-size: 1.3em;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        color: var(--red);
-        text-align: center;
-    }
-
-    .sectiuneFilme{
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: stretch;
-        gap: 1em;
-        justify-content: space-around;
-
-    }
-    .sectiuneFilme .image-container:last-child{
-        display: none;
-    }
-    .sectiuneFilme .textFilm{
-        font-size: 0.8em;
-    }
-    .sectiuneFilme .textFilm p:first-child{
-        font-weight: 900;
-        font-size: 1.2em;
-    }
     footer {
         padding: 1em;
         display: grid;
@@ -434,31 +382,7 @@ footer a:hover{
   }
 }
 @media(max-width: 850px){
-    .titluSectiune{
-        font-size: 1.3em;
-        padding-top: 2%;
-        padding-bottom: 2%;
-        color: var(--red);
-        text-align: center;
-    }
 
-    .sectiuneFilme{
-        position: relative;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        align-items: stretch;
-        gap: 1em;
-        justify-content: space-around;
-
-    }
-    
-    .sectiuneFilme .textFilm{
-        font-size: 0.8em;
-    }
-    .sectiuneFilme .textFilm p:first-child{
-        font-weight: 900;
-        font-size: 1.2em;
-    }
     footer {
         padding: 1em;
         display: grid;
