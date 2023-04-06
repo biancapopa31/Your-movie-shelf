@@ -86,6 +86,7 @@ header{
     padding-right: 3%;
     padding-top: .5%;
     padding-bottom: .5%;
+    min-height: 5.01em;
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
@@ -95,7 +96,45 @@ header{
 }
 
 .meniu .logo{
-    height: 4em;
+    padding-top: 0.5em;
+    height: 3.7em;
+    animation: shake 2s ease-in infinite;
+}
+
+@keyframes shake {
+    0% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+    60% {
+        transform: translate(-5px, -5px) rotate(-15deg);
+        height: 4.2em;
+    }
+    70% {
+        transform: translate(-5px, -5px) rotate(-15deg);
+        height: 4.2em;
+    }
+    80% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+        height: 3.7em;
+    }  
+    87.5% { 
+        transform: translate(-5px, 1px) rotate(0deg);
+    } 
+    90% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+    } 
+    92.5% { 
+        transform: translate(5px, 1px) rotate(0deg); 
+    } 
+    95% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+    }
+    97.5% { 
+    transform: translate(-5px, 1px) rotate(-1deg);
+    }
+    100% {
+         transform: translate(0, 0) rotate(0deg); 
+    }
 }
 
 .meniu .meniuLinks{
@@ -109,6 +148,21 @@ header{
     display: inline-block;
     justify-content: center;
     padding:   8px 12px;
+}
+
+.meniu >.meniuLinks > ul> li:nth-child(3)::after{
+    content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  border: solid black;
+  border-width: 0 1px 1px 0;
+  padding: 4px;
+  width: 6px;
+  height: 6px;
+  transform: rotate(-45deg);
+
 }
 
 .meniu ul li .button{
@@ -249,12 +303,12 @@ header{
     }
     
 }
-@media(max-width: 850px) {
+@media screen and (min-width: 700px) and (max-width: 850px){
     header{
         box-shadow: 0px 1px 3px #777;
     }
     .meniu .logo{
-        height: 2.5em;
+        height: 2.7em; 
     }
     .meniu{
         font-size: 0.8em;
@@ -262,9 +316,15 @@ header{
     .titlu .principal{
         font-size: 2em;
     }
-    
+
     .titlu .subTitlu{
         font-size: 1em;
+    }
+    @keyframes shake {
+        70% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.5em;
+        }
     }
     
 }
@@ -320,7 +380,7 @@ main .titluSectiune:first-child{
     height: 100%;
     opacity: 0;
     transition: opacity .3s ease;
-    background-color: #001219B0  /* Change this to the color you want */
+    background-color: #001219B0  
 }
 .sectiuneFilme .textFilm{
     display: flex;
@@ -433,7 +493,8 @@ footer a:hover{
         justify-self: center;   
   }
 }
-@media(max-width: 850px){
+
+@media screen and (min-width: 700px) and (max-width: 850px){
     .titluSectiune{
         font-size: 1.3em;
         padding-top: 2%;
@@ -473,6 +534,3 @@ footer a:hover{
         justify-self: center;   
   }
 }
-
-
-
