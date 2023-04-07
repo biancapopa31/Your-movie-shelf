@@ -389,11 +389,21 @@ main .titluSectiune:first-child{
     align-items: center;
     text-align: center;
     color: var(--beige);
+    word-wrap: break-word;
+
 }
 
 .sectiuneFilme .textFilm a{
     text-decoration: none;
     color: var(--beige);
+
+}
+.sectiuneFilme .textFilm p{
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    white-space: pre-wrap; /* allows the text to wrap to multiple lines */
+    word-wrap: break-word;
 
 }
 
