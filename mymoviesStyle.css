@@ -23,11 +23,12 @@ body{
     cursor:default;
 }
 main{
-    overflow: hidden;
+    flex-direction: column;
     position: relative;
     height: fit-content;
     padding-left: 15%;
     padding-right: 15%;
+    color: var(--dark-blue)
 
 }
 
@@ -121,7 +122,7 @@ header{
         transform: translate(0px, 0px) rotate(0deg); 
     }
     97.5% { 
-    transform: translate(-5px, 1px) rotate(-1deg);
+        transform: translate(-5px, 1px) rotate(-1deg);
     }
     100% {
          transform: translate(0, 0) rotate(0deg); 
@@ -235,15 +236,59 @@ header{
 }
 
 @media(max-width: 700px) {
+    main{
+        padding-left: 2%;
+        padding-right: 2%;
+        overflow: hidden;
+    }
+
     header{
         box-shadow: 0px 1px 3px #777;
     }
-    .meniu .logo{
-        height: 2.5em;
-    }
     .titlu .principal{
-        font-size: 2em;
+        font-size: 1.5em;
+        padding-top: 3%;
     }
+
+    .meniu .logo{
+        height: 2.9em;
+    }
+    @keyframes shake {  
+        0% { 
+            transform: translate(0, 0) rotate(0deg); 
+        }
+        60% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        70% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        80% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+            height: 2.9em;
+        }  
+        87.5% { 
+            transform: translate(-5px, 1px) rotate(0deg);
+        } 
+        90% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        } 
+        92.5% { 
+            transform: translate(5px, 1px) rotate(0deg); 
+        } 
+        95% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        97.5% { 
+            transform: translate(-5px, 1px) rotate(-1deg);
+        }
+        100% {
+             transform: translate(0, 0) rotate(0deg); 
+        }
+    }
+    
     
     .meniu .meniuLinks ul{
         display: flex;
@@ -317,7 +362,6 @@ header{
     flex-direction: row;
 }
 .leftSide{
-    position: sticky;
     padding-right: 5%;
     width: fit-content;
 }
@@ -329,7 +373,7 @@ header{
 
 }
 
-.leftSide section h1{
+.leftSide section h2{
     font-size: 1em;
     width: 10em;
     color: var(--red);
@@ -385,6 +429,69 @@ table td:nth-child(2), table th:nth-child(2){
 table tr img{
     height: 7em;
 }
+
+@media(max-width: 700px) {
+    .tableContainer{
+        flex-direction: column;
+    }
+    table{
+        order: -1;
+        padding-top: 2%;
+    }
+
+    .leftSide{
+        display: flex;
+        flex-direction: row;
+        padding-top: 3%;
+        width: 100%;
+        justify-content: space-around;
+    }
+    
+    .leftSide section{
+        border: none;
+    }
+    
+    table th{
+        display: none;
+    }
+
+    table tr td{
+        border: none;
+    }
+
+
+    table tr td:not(:first-child){
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8em;
+        margin-left: 2%;
+        padding-top: 0;
+    }
+
+    table tr td:first-child{
+        padding-top: 3%;
+    }
+
+    table tr td:nth-child(2){
+        padding-top: 3%;
+        max-width: 100%;
+        font-size: 1em;
+        color: #9b2226;
+        font-weight: 900;
+        border-bottom: 1px solid var(--red);
+
+    }
+    table td:nth-child(3)::before {
+        content: "by";
+        color:#00121980;
+    }
+
+    table tr td:last-child{
+        display: none;
+    }
+
+}
+
 
 
 footer{
