@@ -151,18 +151,14 @@ header{
 }
 
 .meniu >.meniuLinks > ul> li:nth-child(3)::after{
-    content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  border: solid black;
-  border-width: 0 1px 1px 0;
-  padding: 4px;
-  width: 6px;
-  height: 6px;
-  transform: rotate(-45deg);
+    content: "▾";
+    font-size: 1.2em;
 
+}
+
+.meniu .dropdown > ul> li:nth-child(2)::before{
+    content: "▾";
+    font-size: 1.2em;
 }
 
 .meniu ul li .button{

@@ -151,6 +151,17 @@ header{
     padding:   8px 12px;
 }
 
+.meniu >.meniuLinks > ul> li:nth-child(3)::after{
+    content: "▾";
+    font-size: 1.2em;
+
+}
+
+.meniu .dropdown > ul> li:nth-child(2)::before{
+    content: "▾";
+    font-size: 1.2em;
+}
+
 .meniu ul li .button{
     text-decoration: none;
     color: var(--beige);
