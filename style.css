@@ -326,7 +326,8 @@ header{
 }
 
 .titluSectiune{
-    padding-bottom: .5%;
+    
+    margin-top: 1%;
     margin-bottom: 1.5%;
     padding-left: 1em;
     color: var(--red);
@@ -334,12 +335,9 @@ header{
 }
 
 main .titluSectiune:first-child{
-    padding-top: 2%;
+    padding-top: 1%;
 } 
 
-.scroll-holder{
-    overflow-x: hidden;
-}
 .sectiuneFilme {
     white-space: nowrap;
     position: relative;
