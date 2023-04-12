@@ -58,7 +58,7 @@ header{
     height: 1em;
     background-color:var(--red) ;
     animation: blink 1s step-end infinite;
-    caret-color: transparent; /* Hide the default caret */
+    caret-color: transparent; 
   }
   
 @keyframes blink {
@@ -248,8 +248,45 @@ header{
         box-shadow: 0px 1px 3px #777;
     }
     .meniu .logo{
-        height: 2.5em;
+        height: 2.9em;
     }
+
+    @keyframes shake {  
+        0% { 
+            transform: translate(0, 0) rotate(0deg); 
+        }
+        60% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        70% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        80% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+            height: 2.9em;
+        }  
+        87.5% { 
+            transform: translate(-5px, 1px) rotate(0deg);
+        } 
+        90% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        } 
+        92.5% { 
+            transform: translate(5px, 1px) rotate(0deg); 
+        } 
+        95% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        97.5% { 
+            transform: translate(-5px, 1px) rotate(-1deg);
+        }
+        100% {
+             transform: translate(0, 0) rotate(0deg); 
+        }
+    }
+
     .titlu .principal{
         font-size: 2em;
     }
