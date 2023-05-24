@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html  lang="en">
+   <head>
+    <title>Your movie shelf</title>
+    <meta name="autor" content="Popa Bianca Daniela">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="signup.css" type="text/css">
+    <script type="text/javascript" src="signup.js"></script> 
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+   </head>
+    <body>
+        <header>
+            <nav class="meniu">
+                <a href="index.html" ><img src="img/logo.png" alt ="logo" class="logo"></a>
+                <div class="meniuLinks">
+                    <div class = "button close">Close</div>
+
+                    <ul>
+                        <li><a href="index.html" class="button">Home</a></li>
+                        <li><a href="mymovies.html" class="button">My movies</a></li>
+                        <li>
+                            <a href="" class="button">Browse</a>
+                            <div class="dropdown">
+                                <ul>
+                                    <li><a href="#" class="button">Recomandations</a></li>
+                                    <li>
+                                        <a href="#" class="button">Genres</a>
+                                    <div class="sub-dropdown">
+                                            <ul>
+                                                <li><a href="#" class="button">Action movies</a></li>
+                                                <li><a href="#" class="button">Thriller movies</a></li>
+                                                <li><a href="#" class="button">Romantic movies</a></li>
+                                                <li><a href="#" class="button">Comedies</a></li>
+                                            </ul>
+
+                                        </div>
+                                    </li>
+                                    <li><a href="#" class="button">Top rated</a></li>
+                                </ul>                 
+                            </div>
+                        </li>
+                        <li><a href="" class="button" id="meniuSignUp">Sign up</a></li>
+                    </ul>
+                </div>
+                <div class="button meniuIcon">Menu</div>
+
+            </nav>
+            <section class="titlu">
+                <h1 class= "principal" id="titluPrincipal">Create your account<span class="blinking-cursor"></span></h1>
+                <p class="subTitlu" id="subTitlu">All your favorite movies <br> in one place</p>
+            </section>
+        </header>
+        <main>
+        
+        <div class="form-container">
+            <form name="formSignUp" id="formSignUp" method="post" target ="_self">
+                <fieldset>
+                    <legend>Personal Data</legend>
+                    <p>
+                        <label for="name"> 
+                            Your name*
+                            <input type="text" name ='name' id = "name" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="dataN">
+                            Birth date*
+                            <input type="date" name="dataN" id="dataN" required>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label for="email"> 
+                            Your e-mail*
+                            <input type="email" name='email' id = "email" maxlength="50" minlength="3" required>
+                        </label> 
+                    </p>
+
+                    <p>
+                        <label for="nrTel"> 
+                            Your phone number*
+                            <input type="text" name="nrTel" id = "nrTel" required>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label for="password"> 
+                            Password*
+                            <small>min 8 characters</small>
+                            <input type="password" name='password' id = "password" pattern="[\w]{8,}" required>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="re-password"> 
+                            Re-enter password*
+                            <input type="password" name='re-password' id = "re-password" pattern="[\w]{8,}" required>
+                        </label>
+                    </p>
+                   
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your watching style</legend>
+                    <p>
+                        <label for="genre">
+                            Your favorite genre
+                            <select name="genre" id="genre">
+                                <option>Romantic Comedy</option>
+                                <option>Horror</option>
+                                <option>Action</option>
+                                <option>Science fiction</option>
+                                <option>Romance</option>
+                                <option>Animation</option>
+                                <option>Documentary</option>
+                            </select>
+                        </label>
+                    </p>
+                    <p>
+                        <label for="nrMovies">
+                            How many movies do you watch in a month?
+                            <small> From 0 to 30</small>
+                            <input type="range" name="nrMovies" id="nrMovies" min="0" max="30" step="1" value="0" list="markers">
+                            <datalist id="markers">
+                                <option value="0"></option>
+                                <option value="7"></option>
+                                <option value="15"></option>
+                                <option value="22"></option>
+                                <option value="30"></option>
+                            </datalist>
+                        </label>
+                    </p>
+                </fieldset>
+                <button type="submit" value="Send Request" id="submit">Create</button>
+                
+            </form>
+        </div>
+
+        
+        <img src="img/logo.png" alt="logo" id="logoRand">
+
+        </main>
+        <footer>
+            <a href="">Contact</a>
+            <a href="">About us</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagam</a>
+            <a href="https://ro-ro.facebook.com/" target="_blank">Facebook</a>
+            <a href="https://www.tiktok.com/en/" target="_blank">Tik Tok</a>
+
+        </footer>
+    </body>
+</html>

@@ -4,6 +4,7 @@
     <title>Your movie shelf</title>
     <meta name="autor" content="Popa Bianca Daniela">
     <meta charset="utf-8">
+    <script type="text/javascript" src="mymoviesScript.js"></script> 
     <link rel="stylesheet" href="mymoviesStyle.css" type="text/css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
    </head>
@@ -38,7 +39,7 @@
                             </ul>                 
                         </div>
                     </li>
-                    <li><a href="" class="button">Contact</a></li>
+                    <li><a href="signup.html" class="button">Sign up</a></li>               
                 </ul>
             </div>
             <div class="button meniuIcon">Menu</div>
@@ -49,6 +50,12 @@
 
         <div class="titlu">
             <h1 class="principal">My movies<span class="blinking-cursor"></span></h1>
+            <form class="search-bar">
+                <label for = 'text-box'>
+                    <input type="search" id="text-box">
+                </label>
+                <button type="submit">Search</button>
+            </form>
         </div>
         
 
@@ -85,6 +92,17 @@
                     <th>shelves</th>
                     <th>watch date</th>
                 </tr>
+                <!--<template class="template-row">
+                    <tr class="row">
+                        <td class="cover"><img src="" alt=""></td>
+                        <td class="title"></td>
+                        <td class="director"></td>
+                        <td class="avg-rating"></td>
+                        <td class="your-rating"></td>
+                        <td class="shelves"></td>
+                        <td class="watch-date"></td>
+                    </tr>
+                </template>-->
                 <tr class="row">
                     <td><img src="img/TheGodfather.jpg" alt="The Godfather"></td>
                     <td>The Godfather</td>

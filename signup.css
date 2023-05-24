@@ -10,107 +10,58 @@
 }
 
 body{
-    background-color: var(--beige);
-    display: grid;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     margin: 0;
-    grid-template-areas: 
-            "a"
-            "b"
-            "c"     ;
+
     font-family: "Courier New", monospace;
     caret-color: transparent;
     cursor:default;
 }
 main{
-    flex-direction: column;
     position: relative;
     height: fit-content;
-    padding-left: 15%;
-    padding-right: 15%;
-    color: var(--dark-blue)
-
+    background-color: var(--beige);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 header{
     position: relative;
     display: grid;  
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+        "a"
+        "b";
+    background-color: var(--beige);
     color: var(--red);
-    max-height: 15%;
-    height: fit-content;
     z-index: 1;
-    box-shadow: 0px 2px 5px #777;
 
 }
+
 .titlu{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--red);
+    display: grid;
 }
-
-.titlu .search-bar{
-   display: flex;
-   justify-content: end;
-   align-self: end;
-   margin-bottom: 1em;
-   gap: 0.5em;
-   align-items: start;
-   height: 2em;
-}
-
-.titlu .search-bar label{
-    align-self: center;
-   
-
-}
-
-.titlu .search-bar label input{
-    border-color: var(--red);
-    border-radius: 1em;
-    border-width: 1px;
-    background-color: var(--beige);
-    outline: none;
-    width: 100%;
-    height: 2em;
-    padding: 0.5em;
-    cursor: pointer;
-    caret-color: var(--red);
-    font-size: inherit;
-    font: inherit;
-}
-
-.titlu .search-bar button{
-    border-color: var(--red);
-    border-radius: 1em;
-    outline: none;
-    background-color: var(--red);
-    color: var(--beige);
-    height: auto;
-    padding: 0.5em;
-    cursor: pointer;
-}
-
-.titlu .search-bar button:hover{
-    background-color: var(--beige);
-    color: var(--red);
-}
-
-
 .titlu .principal{
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-self: flex-end;
     font-weight: 900;
-    font-size: 2.5em; 
-    padding-top: 2%;
+    font-size: 4em; 
 
 }
 .titlu .principal .blinking-cursor {
     display: inline-block;
     width: 3px;
     height: 1em;
-    background-color:var(--dark-blue) ;
+    background-color:var(--red) ;
     animation: blink 1s step-end infinite;
-    caret-color: transparent;
+    caret-color: transparent; 
   }
   
 @keyframes blink {
@@ -123,7 +74,16 @@ header{
     100%{
         opacity: 1;
     }
-}  
+}
+
+.titlu .subTitlu{
+    display: flex;
+    justify-self: center;
+    font-weight: 100;
+    font-size: 1.5em;
+    text-align: center;
+    height: fit-content;
+}   
 
 .meniu{
     padding-left: 3%;
@@ -151,11 +111,11 @@ header{
     }
     60% {
         transform: translate(-5px, -5px) rotate(-15deg);
-        height: 4.2em;
+        height: 4.1em;
     }
     70% {
         transform: translate(-5px, -5px) rotate(-15deg);
-        height: 4.2em;
+        height: 4.1em;
     }
     80% { 
         transform: translate(0px, 0px) rotate(0deg); 
@@ -174,7 +134,7 @@ header{
         transform: translate(0px, 0px) rotate(0deg); 
     }
     97.5% { 
-        transform: translate(-5px, 1px) rotate(-1deg);
+    transform: translate(-5px, 1px) rotate(-1deg);
     }
     100% {
          transform: translate(0, 0) rotate(0deg); 
@@ -216,6 +176,7 @@ header{
     color: var(--red);
 }
 
+
 .dropdown{
     display: none;
     transition: display 0.3s ease;
@@ -232,7 +193,6 @@ header{
     width: max-content;
     margin-top: 1em;
 }
-
 .dropdown ul li:last-child{
     margin-bottom: 1em;
 }
@@ -288,23 +248,13 @@ header{
 }
 
 @media(max-width: 700px) {
-    main{
-        padding-left: 2%;
-        padding-right: 2%;
-        overflow: hidden;
-    }
-
     header{
         box-shadow: 0px 1px 3px #777;
     }
-    .titlu .principal{
-        font-size: 1.5em;
-        padding-top: 3%;
-    }
-
     .meniu .logo{
         height: 2.9em;
     }
+
     @keyframes shake {  
         0% { 
             transform: translate(0, 0) rotate(0deg); 
@@ -340,8 +290,14 @@ header{
              transform: translate(0, 0) rotate(0deg); 
         }
     }
+
+    .titlu .principal{
+        font-size: 2em;
+    }
     
-    
+    .titlu .subTitlu{
+        font-size: 1em;
+    }
     .meniu .meniuLinks ul{
         display: flex;
         flex-direction: column;
@@ -385,12 +341,11 @@ header{
     
 }
 @media screen and (min-width: 700px) and (max-width: 850px){
-
     header{
         box-shadow: 0px 1px 3px #777;
     }
     .meniu .logo{
-        height: 2.5em;
+        height: 2.7em; 
     }
     .meniu{
         font-size: 0.8em;
@@ -398,7 +353,10 @@ header{
     .titlu .principal{
         font-size: 2em;
     }
-    
+
+    .titlu .subTitlu{
+        font-size: 1em;
+    }
     @keyframes shake {
         70% {
             transform: translate(-5px, -5px) rotate(-15deg);
@@ -407,158 +365,79 @@ header{
     }
     
 }
+ 
 
-.tableContainer{
-    padding-top: 3%;
+.form-container{
     display: flex;
-    flex-direction: row;
-}
-.leftSide{
-    padding-right: 5%;
-    width: fit-content;
-}
-
-.leftSide section{
-    border-bottom: 1px solid var(--red);
-    padding-top: 5%;
-    width: fit-content;
-
+    width: max-content;
+    justify-self:center;
+    align-self: center;
+    font-size: 1.3em;
+    padding-bottom: 2%;
 }
 
-.leftSide section h2{
-    font-size: 1em;
-    width: 10em;
-    color: var(--red);
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.leftSide section ul li{
-    padding: 1% 0%;
-    list-style-type: none;
-    text-decoration: none;
+.form-container  fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    align-items: center;
+    justify-content: center;
+    border-color: var(--red);
+    text-align: left;
 }
 
-.leftSide section button{
-    padding: 1% 3%;
+.form-container  fieldset p{
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+}
+
+.form-container  fieldset label{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.form-container #submit{
+    padding: 2% 5%;
     background-color: var(--beige);
-    border: 1px solid var(--red);
+    border: 2px solid var(--red);
     margin-top: 1%;
     margin-bottom: 4%;
     transition:all 0.3s;
+    font-size: 0.9em;
+
 }
 
-.leftSide section ul li:hover{
-    text-decoration: underline var(--red);
-}
-
-.leftSide section button:hover{
+.form-container #submit:hover{
     background-color: var(--red);
     border: 1px solid var(--dark-blue);
     color: var(--beige);
 }
 
-
-table{
-    width: 100%;
-    border-spacing: 0;
+.profile-container p{
+    padding: 2%;
+    color: var(--dark-blue);
+    width: max-content;
+    font-size: 1.3em;
 }
 
-table th{
-    text-align: left;
-    color: var(--red);
-    font-weight: 900;
+.profile-container #left-side p{
+    padding-top: 3%;
+    font-weight: 600;
 }
-
-
-table td, table th{
-    border-bottom: 1px solid var(--red);
-    padding: 1%;
-}
-
-table td:nth-child(2), table th:nth-child(2){
-    max-width: 12em;
-}
-
-table tr img{
-    height: 7em;
-}
-
-@media(max-width: 850px){
-    .tableContainer{
-        flex-direction: column;
-    }
-    table{
-        order: -1;
-        padding-top: 2%;
-    }
-
-    .leftSide{
-        display: flex;
-        flex-direction: row;
-        padding-top: 3%;
-        width: 100%;
-        justify-content: space-around;
-    }
-    
-    .leftSide section{
-        border: none;
-    }
-    
-    table th{
-        display: none;
-    }
-
-    table tr td{
-        border: none;
-    }
-
-
-    table tr td:not(:first-child){
-        display: flex;
-        flex-direction: column;
-        font-size: 0.8em;
-        margin-left: 2%;
-        padding-top: 0;
-    }
-
-    table tr td:first-child{
-        padding-top: 3%;
-    }
-
-    table tr td:nth-child(2){
-        padding-top: 3%;
-        max-width: 100%;
-        font-size: 1em;
-        color: #9b2226;
-        font-weight: 900;
-        border-bottom: 1px solid var(--red);
-
-    }
-    table td:nth-child(3)::before {
-        content: "by";
-        color:#00121980;
-    }
-
-    table tr td:last-child{
-        display: none;
-    }
-
-}
-
-@media screen and (min-width: 850px) and (max-width: 1300px){
-
-    main{
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-}
-    
-
 
 footer{
-    position:-ms-page;
-
-
-    margin-top: 2%;
     border-top: 2px solid var(--red);
     border-bottom: 1px solid var(--red);
     display: flex;
@@ -571,7 +450,6 @@ footer{
 footer a{
     padding: 2%;
     text-decoration: none;
-    font-weight: bold;
     color: var(--beige);
     transition: all 0.3s;
 }
@@ -595,8 +473,9 @@ footer a:hover{
         justify-self: center;   
   }
 }
-@media screen and (min-width: 700px) and (max-width: 850px){
 
+@media screen and (min-width: 700px) and (max-width: 850px){
+    
     footer {
         padding: 1em;
         display: grid;
@@ -611,6 +490,3 @@ footer a:hover{
         justify-self: center;   
   }
 }
-
-
-
