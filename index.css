@@ -1,0 +1,577 @@
+:root{
+    --red: #9b2226;
+    --dark-blue: #001219;
+    --beige: #e9d8a6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--dark-blue);
+    display: grid;
+    min-height: 100vh;
+    margin: 0;
+    grid-template-areas: 
+            "a"
+            "b"
+            "c"     ;
+    font-family: "Courier New", monospace;
+    caret-color: transparent;
+    cursor:default;
+}
+main{
+    position: relative;
+    height: fit-content;
+}
+
+header{
+    position: relative;
+    display: grid;  
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+        "a"
+        "b";
+    background-color: var(--beige);
+    color: var(--red);
+    z-index: 1;
+    box-shadow: 0px 2px 5px #777;
+
+}
+
+.titlu{
+    display: grid;
+}
+.titlu .principal{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    font-weight: 900;
+    font-size: 4em; 
+
+}
+.titlu .principal .blinking-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color:var(--red) ;
+    animation: blink 1s step-end infinite;
+    caret-color: transparent; 
+  }
+  
+@keyframes blink {
+    0%{
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.titlu .subTitlu{
+    display: flex;
+    justify-self: center;
+    font-weight: 100;
+    font-size: 1.5em;
+    text-align: center;
+}   
+
+.meniu{
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+    min-height: 5.01em;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark-blue);
+    box-shadow: 0px 2px 5px var(--dark-blue);
+}
+
+.meniu .logo{
+    padding-top: 0.5em;
+    height: 3.7em;
+    animation: shake 2s ease-in infinite;
+}
+
+@keyframes shake {
+    0% { 
+        transform: translate(0, 0) rotate(0deg); 
+    }
+    60% {
+        transform: translate(-5px, -5px) rotate(-15deg);
+        height: 4.2em;
+    }
+    70% {
+        transform: translate(-5px, -5px) rotate(-15deg);
+        height: 4.2em;
+    }
+    80% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+        height: 3.7em;
+    }  
+    87.5% { 
+        transform: translate(-5px, 1px) rotate(0deg);
+    } 
+    90% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+    } 
+    92.5% { 
+        transform: translate(5px, 1px) rotate(0deg); 
+    } 
+    95% { 
+        transform: translate(0px, 0px) rotate(0deg); 
+    }
+    97.5% { 
+    transform: translate(-5px, 1px) rotate(-1deg);
+    }
+    100% {
+         transform: translate(0, 0) rotate(0deg); 
+    }
+}
+
+.meniu .meniuLinks{
+    flex: 1;
+    text-align: right;
+}
+
+.meniu .meniuLinks ul li{
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    justify-content: center;
+    padding:   8px 12px;
+}
+
+.meniu >.meniuLinks > ul> li:nth-child(3)::after{
+    content: "▾";
+    font-size: 1.2em;
+
+}
+
+.meniu .dropdown > ul> li:nth-child(2)::before{
+    content: "▾";
+    font-size: 1.2em;
+}
+
+.meniu ul li .button{
+    text-decoration: none;
+    color: var(--beige);
+    font-size: 110%;
+    transition: all 0.3s;
+}
+
+.meniu ul li .button:hover{
+    color: var(--red);
+}
+
+
+.dropdown{
+    display: none;
+    transition: display 0.3s ease;
+}
+
+.dropdown ul{
+    display: block;
+    position: relative;
+    text-align: left;
+}
+
+.dropdown ul li{
+    display: block;
+    width: max-content;
+    margin-top: 1em;
+}
+.dropdown ul li:last-child{
+    margin-bottom: 1em;
+}
+
+.dropdown ul li .button{
+    text-align: center;
+}
+
+.meniu ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--dark-blue);
+    box-shadow: 0px 2px 5px var(--dark-blue);
+}
+
+.sub-dropdown{
+    display: none;
+    position: absolute;
+    top: 0%;
+    right: 100%;
+    padding-right: 0.5em;
+    transition: display 0.3s ease;
+    background-color: var(--dark-blue);
+    box-shadow: 0px 2px 5px var(--dark-blue);
+}
+
+.sub-dropdown ul{
+    display: block;
+    position: relative;
+    text-align: left;
+}
+
+.sub-dropdown ul li{
+    display: block;
+    width: max-content;
+    margin-top: 1em;
+}
+.sub-dropdown ul li:last-child{
+    margin-bottom: 1em;
+}
+
+.sub-dropdown ul li .button{
+    text-align: center;
+}
+
+.dropdown ul li:hover .sub-dropdown{
+    display: block;
+}
+.button.meniuIcon, .button.close{
+    display: none;
+}
+
+@media(max-width: 700px) {
+    header{
+        box-shadow: 0px 1px 3px #777;
+    }
+    .meniu .logo{
+        height: 2.9em;
+    }
+
+    @keyframes shake {  
+        0% { 
+            transform: translate(0, 0) rotate(0deg); 
+        }
+        60% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        70% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.4em;
+        }
+        80% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+            height: 2.9em;
+        }  
+        87.5% { 
+            transform: translate(-5px, 1px) rotate(0deg);
+        } 
+        90% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        } 
+        92.5% { 
+            transform: translate(5px, 1px) rotate(0deg); 
+        } 
+        95% { 
+            transform: translate(0px, 0px) rotate(0deg); 
+        }
+        97.5% { 
+            transform: translate(-5px, 1px) rotate(-1deg);
+        }
+        100% {
+             transform: translate(0, 0) rotate(0deg); 
+        }
+    }
+
+    .titlu .principal{
+        font-size: 2em;
+    }
+    
+    .titlu .subTitlu{
+        font-size: 1em;
+    }
+    .meniu .meniuLinks ul{
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+        padding-top: 1em;
+        
+    }
+    
+    .meniu .meniuLinks ul li{
+        display: block;
+    }
+
+    .meniu .meniuLinks{
+        display: none;
+        position: absolute;
+        background-color: var(--dark-blue);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: 0px;
+        text-align: left;
+        z-index: 2;
+    }
+
+    .button.close{
+        display: block;
+        margin-top: 10%;
+        margin-left: 5%;
+        cursor: pointer;
+    }
+    .button.close:hover, .button.meniuIcon:hover{
+        text-decoration: underline;
+    }
+    .button.meniuIcon{
+        display: block;
+        padding-right: 1em;
+        color: var(--beige);
+        cursor: pointer;
+    }
+    
+}
+@media screen and (min-width: 700px) and (max-width: 850px){
+    header{
+        box-shadow: 0px 1px 3px #777;
+    }
+    .meniu .logo{
+        height: 2.7em; 
+    }
+    .meniu{
+        font-size: 0.8em;
+    }
+    .titlu .principal{
+        font-size: 2em;
+    }
+
+    .titlu .subTitlu{
+        font-size: 1em;
+    }
+    @keyframes shake {
+        70% {
+            transform: translate(-5px, -5px) rotate(-15deg);
+            height: 3.5em;
+        }
+    }
+    
+}
+
+.titluSectiune{
+    
+    margin-top: 1%;
+    margin-bottom: 1.5%;
+    padding-left: 1em;
+    color: var(--red);
+
+}
+
+main .titluSectiune:first-child{
+    padding-top: 1%;
+} 
+
+.sectiuneFilme {
+    white-space: nowrap;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: stretch;
+    gap: 1em;
+    justify-content: space-around;
+    cursor:pointer;
+
+}
+
+.sectiuneFilme h1{
+    display: none;
+}
+
+.sectiuneFilme .image-container img{
+    position: relative;
+    width: 100%;
+    transition: width 0.3s ease;
+    height: auto;
+  
+}
+
+.image-container {
+    position: relative;
+}
+
+.sectiuneFilme .overlay, .textFilm {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100% ;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .3s ease;
+    background-color: #001219B0  
+}
+.sectiuneFilme .textFilm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--beige);
+    word-wrap: break-word;
+
+}
+
+.sectiuneFilme .textFilm a{
+    text-decoration: none;
+    color: var(--beige);
+
+}
+.sectiuneFilme .textFilm p{
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    white-space: pre-wrap; /* allows the text to wrap to multiple lines */
+    word-wrap: break-word;
+
+}
+
+.sectiuneFilme .textFilm p:first-child{
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+.sectiuneFilme .image-container:hover{  
+    position: relative;
+    top: -5%;
+    left: -5%;   
+    width: 110%;
+    z-index: 1;
+}
+
+.sectiuneFilme .image-container:hover .overlay {
+    opacity: 1;
+    left: -1px;
+    top: -1px;
+    height: calc(100% - 3px);
+}
+
+.sectiuneFilme .image-container:hover .textFilm{
+    opacity: 1;
+}
+
+.sectiuneFilme .textFilm p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.sectiuneFilme .textFilm p:first-child:hover{
+    text-decoration: none;
+}
+
+footer{
+    margin-top: 2%;
+    border-top: 1px solid var(--beige);
+    border-bottom: 1px solid var(--beige);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10em;
+    background-color: var(--dark-blue);
+}
+
+footer a{
+    padding: 2%;
+    text-decoration: none;
+    color: var(--beige);
+    transition: all 0.3s;
+}
+footer a:hover{
+    color: var(--red);
+}
+  
+
+@media(max-width: 700px){
+    .titluSectiune{
+        font-size: 1.3em;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        color: var(--red);
+        text-align: center;
+    }
+
+    .sectiuneFilme{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+        gap: 1em;
+        justify-content: space-around;
+
+    }
+    .sectiuneFilme .image-container:last-child{
+        display: none;
+    }
+    .sectiuneFilme .textFilm{
+        font-size: 0.8em;
+    }
+    .sectiuneFilme .textFilm p:first-child{
+        font-weight: 900;
+        font-size: 1.2em;
+    }
+    footer {
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+      
+    footer a {
+        padding: 0;
+        margin: 0;
+
+        justify-self: center;   
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 850px){
+    .titluSectiune{
+        font-size: 1.3em;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        color: var(--red);
+        text-align: center;
+    }
+
+    .sectiuneFilme{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: stretch;
+        gap: 1em;
+        justify-content: space-around;
+
+    }
+    
+    .sectiuneFilme .textFilm{
+        font-size: 0.8em;
+    }
+    .sectiuneFilme .textFilm p:first-child{
+        font-weight: 900;
+        font-size: 1.2em;
+    }
+    footer {
+        padding: 1em;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+      
+    footer a {
+        padding: 0;
+        margin: 0;
+
+        justify-self: center;   
+  }
+}

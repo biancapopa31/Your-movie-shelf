@@ -131,6 +131,8 @@ function validForm(event){
     console.log(dateText, currentDate);
     console.log(currentDate.getFullYear() - dateText.getFullYear());
 
+    event.preventDefault();
+ 
     if(currentDate.getFullYear() - dateText.getFullYear() < 16){
         alert('You must be at least 16 years old!')
         event.preventDefault();
@@ -210,6 +212,7 @@ function validForm(event){
     const formDataString = JSON.stringify(formDataObject);
     localStorage.setItem('formData', formDataString);
 
+    location.reload(); 
 
     return true;
 }

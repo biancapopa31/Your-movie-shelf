@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html  lang="en">
+   <head>
+    <title>Your movie shelf</title>
+    <meta name="autor" content="Popa Bianca Daniela">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="mymoviesScrip.js"></script> 
+    <link rel="stylesheet" href="mymoviesStyle.css" type="text/css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+   </head>
+   <body>
+      <header>
+        <nav class="meniu">
+            <a href="index.html" ><img src="img/logo.png" alt ="logo" class="logo"></a>
+            <div class="meniuLinks">
+                <div class = "button close">Close</div>
+
+                <ul>
+                    <li><a href="index.html" class="button">Home</a></li>
+                    <li><a href="" class="button">My movies</a></li>
+                    <li>
+                        <a href="" class="button">Browse</a>
+                        <div class="dropdown">
+                            <ul>
+                                <li><a href="allMovies.html" class="button">All movies</a></li>
+                                <!--<li>
+                                    <a href="#" class="button">Genres</a>
+                                <div class="sub-dropdown">
+                                        <ul>
+                                            <li><a href="#" class="button">Action movies</a></li>
+                                            <li><a href="#" class="button">Thriller movies</a></li>
+                                            <li><a href="#" class="button">Romantic movies</a></li>
+                                            <li><a href="#" class="button">Comedies</a></li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                                <li><a href="#" class="button">Top rated</a></li>-->
+                            </ul>                 
+                        </div>
+                    </li>
+                    <li><a href="signup.html" class="button" id="meniuSignUp">Sign up</a></li>               
+                </ul>
+            </div>
+            <div class="button meniuIcon">Menu</div>
+
+        </nav>
+      </header>
+      <main>
+
+        <div class="titlu">
+            <h1 class="principal">All movies<span class="blinking-cursor"></span></h1>
+            <form class="search-bar">
+                <label for = 'text-box'>
+                    <input type="search" id="text-box">
+                </label>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        
+
+        <div class="tableContainer">
+            <div class="leftSide">
+                <section>
+                    <h2>Movie shelves</h2>
+                    <ul>
+                        <li>All</li>
+                        <li>Watched</li>
+                        <li>Favorites</li>
+                        <li>Want to watch</li>
+                        <li><button>Add shelf</button></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Your watching activity</h2>
+                    <ul>
+                        <li>Your year in movies</li>
+                        <li>Viewing challenge</li>
+                        <li>Favorite genres</li>
+                    </ul>
+                </section>
+
+            </div>
+            <table>
+                <tr>
+                    <th>cover</th>
+                    <th>title</th>
+                    <th>director</th>
+                    <th>avg rating</th>
+                    <th>your rating</th>
+                    <th>shelves</th>
+                    <th>watch date</th>
+                </tr>
+                <!--<template class="template-row">
+                    <tr class="row">
+                        <td class="cover"><img src="" alt=""></td>
+                        <td class="title"></td>
+                        <td class="director"></td>
+                        <td class="avg-rating"></td>
+                        <td class="your-rating"></td>
+                        <td class="shelves"></td>
+                        <td class="watch-date"></td>
+                    </tr>
+                </template>-->
+                <tr class="row">
+                    <td><img src="img/TheGodfather.jpg" alt="The Godfather"></td>
+                    <td>The Godfather</td>
+                    <td>Francis Ford Coppola</td>
+                    <td>9.2/10</td>
+                    <td>my rating</td>
+                    <td>Watched</td>
+                    <td>12 mar 2019</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/Dune.jpg" alt="Dune"></td>
+                    <td>Dune</td>
+                    <td>Denis Villeneuve</td>
+                    <td>8.0/10</td>
+                    <td>my rating</td>
+                    <td>Watched</td>
+                    <td>4 oct 2022</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/JohnWick:Chapter4.jpeg" alt="John Wick: Chapter 4"></td>
+                    <td>John Wick: Chapter 4</td>
+                    <td>Chad Stahelski</td>
+                    <td>8.3/10</td>
+                    <td>my rating</td>
+                    <td>Watched</td>
+                    <td>9 apr 2023</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/Inception.jpg" alt="Inception"></td>
+                    <td>Inception</td>
+                    <td>Christopher Nolan</td>
+                    <td>8.8/10</td>
+                    <td>my rating</td>
+                    <td>Favorites</td>
+                    <td>23 aug 2021</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/TheOutfit.jpeg" alt="The Outfit"></td>
+                    <td>The Outfit</td>
+                    <td>Graham Moore</td>
+                    <td>7.1/10</td>
+                    <td>my rating</td>
+                    <td>Favorites</td>
+                    <td>16 sep 2022</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/TheDevilAlltheTime.jpg" alt="The Devil All the Time"></td>
+                    <td>The Devil All the Time</td>
+                    <td>Antonio Campos</td>
+                    <td>7.1/10</td>
+                    <td>my rating</td>
+                    <td>Favorites</td>
+                    <td>1 sep 2020</td>
+                </tr>
+                <tr class="row">
+                    <td><img src="img/BlackPanther:WakandaForever.webp" alt="Black Panther: Wakanda Forever"></td>
+                    <td>Black Panther: Wakanda Forever</td>
+                    <td>Ryan Coogler</td>
+                    <td>6.7/10</td>
+                    <td>my rating</td>
+                    <td>Watched</td>
+                    <td>23 nov 2022</td>
+                </tr>
+    
+            </table>
+        </div>
+       
+        
+
+      </main>
+      <footer>
+        <a href="">Contact</a>
+        <a href="">About us</a>
+        <a href="https://www.instagram.com/" target="_blank">Instagam</a>
+        <a href="https://ro-ro.facebook.com/" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/en/" target="_blank">Tik Tok</a>
+
+      </footer>
+   </body>
+</html>
